@@ -19,7 +19,7 @@
     var ctx = this.ctx;
 
     setInterval(function(){
-      game.moveObjects();
+      game.step();
       game.draw(ctx);
     }, 20);
   };

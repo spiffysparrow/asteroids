@@ -10,12 +10,12 @@ var mySum = function() {
 // console.log(sum());
 
 Function.prototype.myBind = function(context) {
-  var args = Array.prototype.slice.call(arguments);
-  args = args.slice(1);
+  var bindArgs = Array.prototype.slice.call(arguments, 1);
   var fn = this;
+
   return function() {
-    var args2 = Array.prototype.slice.call(arguments);
-    var allArgs = args.concat(args2);
+    var invokeArgs = Array.prototype.slice.call(arguments);
+    var allArgs = bindArgs.concat(invokeArgs);
     fn.apply(context, allArgs);
   };
 };
